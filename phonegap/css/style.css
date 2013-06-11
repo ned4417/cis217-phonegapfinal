@@ -1,0 +1,31 @@
+.header_img{
+    display:block;
+    margin: auto;
+}
+.header p{
+    text-align: center;
+}
+.header{
+    margin: auto;
+}
+#map{
+    text-align: center;
+}
+
+#order_table tr, #order_table td{
+    border: 1px solid gray;
+
+}
+#order_table{
+    display: block;
+    margin:auto;
+    text-align: center;
+    width: 100%
+}
+#message{
+    display: none;
+    text-align: center;
+    font-weight:bold;
+    font-size: 20pt;
+    color: cornflowerblue;
+}
