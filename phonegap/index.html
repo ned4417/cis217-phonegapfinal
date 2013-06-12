@@ -39,6 +39,7 @@
 
     <div date-role="content home_content">
         <p><a href="tel:555-555-2555" data-role="button">Call Us</a></p>
+        <p><button onclick="addContact()">Add Contact</button></p>
 
         <script type="text/javascript" charset="utf-8">
 
@@ -49,6 +50,8 @@
             // Cordova is ready
             //
             function onDeviceReady() {
+            }
+            function addContact(){
                 // create
                 var contact = navigator.contacts.create();
                 contact.displayName = "ShowBiz Pizza Place";
