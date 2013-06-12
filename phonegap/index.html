@@ -38,6 +38,25 @@
 
     <div date-role="content home_content">
         <p><a href="tel:555-555-5555" data-role="button">Call Us</a></p>
+
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for Cordova to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // Cordova is ready
+            //
+            function onDeviceReady() {
+                var myContact = navigator.contacts.create({"displayName": "Test User"});
+                myContact.note = "This contact has a note.";
+                console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+            }
+
+
+        </script>
+
+
     </div>
 
     <div data-role="footer" data-position="fixed">

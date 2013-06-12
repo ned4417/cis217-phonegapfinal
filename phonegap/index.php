@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/cordova.js"></script>
     <script src="js/effects.js"></script>
 </head>
 
@@ -36,9 +37,31 @@
     </div>
     <!-- /navbar -->
 
-    <div date-role="content home_content">
+    <div data-role="content home_content">
         <p><a href="tel:555-555-5555" data-role="button">Call Us</a></p>
+
+
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for Cordova to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // Cordova is ready
+            //
+            function onDeviceReady() {
+                var myContact = navigator.contacts.create({"displayName": "Test User"});
+                myContact.note = "This contact has a note.";
+                console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+            }
+
+
+        </script>
+
+
+
     </div>
+
 
     <div data-role="footer" data-position="fixed">
         <h4><i>Showbiz Pizza Place &copy; 2013</i></h4>
