@@ -11,6 +11,61 @@
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/cordova.2.7.0.js"></script>
     <script src="js/effects.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+        }
+
+        function addContact(){
+            // create
+            var contact = navigator.contacts.create();
+            contact.displayName = "ShowBiz Pizza Place";
+            contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
+
+            var phoneNumbers = [];
+            phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
+            phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
+            contact.phoneNumbers = phoneNumbers;
+
+            // save
+            contact.save(onSaveSuccess,onSaveError);
+
+            // remove
+            //      contact.remove(onRemoveSuccess,onRemoveError);
+        }
+
+        // onSaveSuccess: Get a snapshot of the current contacts
+        //
+        function onSaveSuccess(contact) {
+            alert("Save Success");
+        }
+
+        // onSaveError: Failed to get the contacts
+        //
+        function onSaveError(contactError) {
+            alert("Error = " + contactError.code);
+        }
+
+        // onRemoveSuccess: Get a snapshot of the current contacts
+        //
+        function onRemoveSuccess(contacts) {
+            alert("Removal Success");
+        }
+
+        // onRemoveError: Failed to get the contacts
+        //
+        function onRemoveError(contactError) {
+            alert("Error = " + contactError.code);
+        }
+
+    </script>
+
 </head>
 
 
@@ -39,61 +94,8 @@
 
     <div date-role="content home_content">
         <p><a href="tel:555-555-2555" data-role="button">Call Us</a></p>
-        <p><a href="#" onclick="addContact()">Add Contact</a></p>
+        <p><a href="#" onclick="addContact(); return false;">Add Contact</a></p>
 
-        <script type="text/javascript" charset="utf-8">
-
-            // Wait for Cordova to load
-            //
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            // Cordova is ready
-            //
-            function onDeviceReady() {
-            }
-            function addContact(){
-                // create
-                var contact = navigator.contacts.create();
-                contact.displayName = "ShowBiz Pizza Place";
-                contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
-
-                var phoneNumbers = [];
-                phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
-                phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
-                contact.phoneNumbers = phoneNumbers;
-
-                // save
-                contact.save(onSaveSuccess,onSaveError);
-
-                // remove
-                contact.remove(onRemoveSuccess,onRemoveError);
-            }
-
-            // onSaveSuccess: Get a snapshot of the current contacts
-            //
-            function onSaveSuccess(contact) {
-                alert("Save Success");
-            }
-
-            // onSaveError: Failed to get the contacts
-            //
-            function onSaveError(contactError) {
-                alert("Error = " + contactError.code);
-            }
-
-            // onRemoveSuccess: Get a snapshot of the current contacts
-            //
-            function onRemoveSuccess(contacts) {
-                alert("Removal Success");
-            }
-
-            // onRemoveError: Failed to get the contacts
-            //
-            function onRemoveError(contactError) {
-                alert("Error = " + contactError.code);
-            }
-
-        </script>
 
 
 
