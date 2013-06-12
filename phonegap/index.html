@@ -49,13 +49,50 @@
             // Cordova is ready
             //
             function onDeviceReady() {
-                var myContact = navigator.contacts.create({"displayName": "Test User"});
-                myContact.note = "This contact has a note.";
-                alert("The contact, " + myContact.displayName + ", note: " + myContact.note);
+                // create
+                var contact = navigator.contacts.create();
+                contact.displayName = "ShowBiz Pizza Place";
+                contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
+
+                var phoneNumbers = [];
+                phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
+                phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
+                contact.phoneNumbers = phoneNumbers;
+
+
+                // save
+                contact.save(onSaveSuccess,onSaveError);
+
+                // remove
+                contact.remove(onRemoveSuccess,onRemoveError);
             }
 
+            // onSaveSuccess: Get a snapshot of the current contacts
+            //
+            function onSaveSuccess(contact) {
+                alert("Save Success");
+            }
+
+            // onSaveError: Failed to get the contacts
+            //
+            function onSaveError(contactError) {
+                alert("Error = " + contactError.code);
+            }
+
+            // onRemoveSuccess: Get a snapshot of the current contacts
+            //
+            function onRemoveSuccess(contacts) {
+                alert("Removal Success");
+            }
+
+            // onRemoveError: Failed to get the contacts
+            //
+            function onRemoveError(contactError) {
+                alert("Error = " + contactError.code);
+            }
 
         </script>
+
 
 
     </div>
