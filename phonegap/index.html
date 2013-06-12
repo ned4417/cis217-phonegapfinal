@@ -36,6 +36,11 @@
             var contact = navigator.contacts.create();
             contact.displayName = "ShowBiz Pizza Place";
             contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
+            var name = new ContactName();
+            name.givenName = "ShowBiz";
+            name.familyName = "Pizza";
+            contact.name = name;
+
 
             var phoneNumbers = [];
             phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
