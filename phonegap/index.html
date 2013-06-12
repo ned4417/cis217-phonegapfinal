@@ -21,7 +21,15 @@
         //
         function onDeviceReady() {
         }
+        function onSaveSuccess(contact) {
+            alert("Save Success");
+        }
 
+        // onSaveError: Failed to get the contacts
+        //
+        function onSaveError(contactError) {
+            alert("Error = " + contactError.code);
+        }
         function addContact(){
             // create
             alert("button is working");
@@ -35,6 +43,7 @@
             contact.phoneNumbers = phoneNumbers;
 
             // save
+            alert("gets info")
             contact.save(onSaveSuccess,onSaveError);
 
             // remove
@@ -43,15 +52,7 @@
 
         // onSaveSuccess: Get a snapshot of the current contacts
         //
-        function onSaveSuccess(contact) {
-            alert("Save Success");
-        }
 
-        // onSaveError: Failed to get the contacts
-        //
-        function onSaveError(contactError) {
-            alert("Error = " + contactError.code);
-        }
 
         // onRemoveSuccess: Get a snapshot of the current contacts
         //
