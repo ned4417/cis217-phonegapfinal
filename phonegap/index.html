@@ -38,7 +38,7 @@
     <!-- /navbar -->
 
     <div date-role="content home_content">
-        <p><a href="tel:555-555-5555" data-role="button">Call Us</a></p>
+        <p><a href="tel:555-555-2555" data-role="button">Call Us</a></p>
 
         <script type="text/javascript" charset="utf-8">
 
@@ -59,12 +59,12 @@
                 phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
                 contact.phoneNumbers = phoneNumbers;
 
-
+                alert(contact);
                 // save
                 contact.save(onSaveSuccess,onSaveError);
 
                 // remove
-               // contact.remove(onRemoveSuccess,onRemoveError);
+                contact.remove(onRemoveSuccess,onRemoveError);
             }
 
             // onSaveSuccess: Get a snapshot of the current contacts
