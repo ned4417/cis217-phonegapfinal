@@ -33,7 +33,9 @@
         function addContact(){
             // create
             alert("button is working");
-            var contact = navigator.contacts.create();
+            navigator.notification.vibrate(2500);
+
+            //var contact = navigator.contacts.create();
             alert("created variable works");
             contact.displayName = "ShowBiz Pizza Place";
             contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
