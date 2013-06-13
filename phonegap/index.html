@@ -33,28 +33,19 @@
         function addContact(){
             // create
             alert("button is working");
-            var contact = navigator.contacts.create();
-            /*alert("names work1");
-            contact.displayName = "ShowBiz Pizza Place";
-            alert("names work2");
-            contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
-            alert("names work3");
-            var name = new ContactName();
-            alert("names work4");
-            name.givenName = "ShowBiz";
-            alert("names work5");
-            name.familyName = "Pizza";
-            alert("names work6");
-            contact.name = name;
+            var contact = navigator.contacts.create({
+                displayName: "ShowBiz Pizza Place",
+                nickname: "ShowBiz Pizza"     //specify both to support all devices
+            });
+            alert("is names");
 
-            alert("names work7");
             var phoneNumbers = [];
             phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
             phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
-            contact.phoneNumbers = phoneNumbers;*/
+            contact.phoneNumbers = phoneNumbers;
 
             // save
-            alert("gets info")
+            alert("gets numbers");
             contact.save(onSaveSuccess,onSaveError);
 
             // remove
@@ -107,7 +98,7 @@
 
     <div date-role="content home_content">
         <p><a href="tel:555-555-2555" data-role="button">Call Us</a></p>
-        <p><a href="#" onclick="addContact(); return false;">Add Contact</a></p>
+        <p><a href="#" onclick="addContact(); return false;" data-role="button">Add ShowBiz To Your Contacts</a></p>
 
 
 
