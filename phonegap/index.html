@@ -21,65 +21,10 @@
         //
         function onDeviceReady() {
             var myContact = navigator.contacts.create({"displayName": "Test User"});
-            myContact.gender = "male";
-            alert("The contact, " + myContact.displayName + ", is of the " + myContact.gender + " gender");
-
-        }
-        /*function onSaveSuccess(contact) {
-            alert("Save Success");
+            myContact.note = "This contact has a note.";
+            alert("The contact, " + myContact.displayName + ", note: " + myContact.note);
         }
 
-        // onSaveError: Failed to get the contacts
-        //
-        function onSaveError(contactError) {
-            alert("Error = " + contactError.code);
-        }
-        function addContact(){
-            // create
-            alert("button is working");
-            var contact = navigator.contacts.create();
-            alert("names work1");
-            contact.displayName = "ShowBiz Pizza Place";
-            alert("names work2");
-            contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
-            alert("names work3");
-            var name = new ContactName();
-            alert("names work4");
-            name.givenName = "ShowBiz";
-            alert("names work5");
-            name.familyName = "Pizza";
-            alert("names work6");
-            contact.name = name;
-
-            alert("names work7");
-            var phoneNumbers = [];
-            phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
-            phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
-            contact.phoneNumbers = phoneNumbers;
-
-            // save
-            alert("gets all info")
-            contact.save(onSaveSuccess,onSaveError);
-
-            // remove
-            contact.remove(onRemoveSuccess,onRemoveError);
-        }
-
-        // onSaveSuccess: Get a snapshot of the current contacts
-        //
-
-
-        // onRemoveSuccess: Get a snapshot of the current contacts
-        //
-        function onRemoveSuccess(contacts) {
-            alert("Removal Success");
-        }
-
-        // onRemoveError: Failed to get the contacts
-        //
-        function onRemoveError(contactError) {
-            alert("Error = " + contactError.code);
-        }*/
 
     </script>
 
