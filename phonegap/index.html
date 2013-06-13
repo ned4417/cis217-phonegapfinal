@@ -22,19 +22,9 @@
         function onDeviceReady() {
         }
 
-        function onSuccess(contact) {
-            alert("Save Success");
-        }
-
-        function onError(contactError) {
-            alert("Error = " + contactError.code);
-        }
-
         function addContact(){
             // create
-            alert("button is working");
             var my_contact = navigator.contacts.create();
-            alert("created variable works");
             my_contact.displayName = "ShowBiz Pizza Place";
 
             var phoneNumbers = [];
@@ -42,14 +32,10 @@
             phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
             my_contact.phoneNumbers = phoneNumbers;
 
+
             // save
-            alert("gets all info");
-            my_contact.save(onSuccess,onError);
-
-            // remove
-            //my_contact.remove(onRemoveSuccess,onRemoveError);
+            my_contact.save();
         }
-
 
     </script>
 
