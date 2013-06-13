@@ -21,21 +21,12 @@
         //
         function onDeviceReady() {
         }
-        function onSaveSuccess() {
-            alert("Save Success");
-        }
 
-        // onSaveError: Failed to get the contacts
-        //
-        function onSaveError(contactError) {
-            alert("Error = " + contactError.code);
-        }
         function addContact(){
             // create
             alert("button is working");
-            var myContact = navigator.contacts.create({"displayName": "Test User"});
-
-            alert("names work1");
+            var contact = navigator.contacts.create();
+            alert("created variable works");
              /*contact.displayName = "ShowBiz Pizza Place";
             alert("names work2");
             contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
@@ -64,7 +55,15 @@
 
         // onSaveSuccess: Get a snapshot of the current contacts
         //
+        function onSaveSuccess() {
+            alert("Save Success");
+        }
 
+        // onSaveError: Failed to get the contacts
+        //
+        function onSaveError(contactError) {
+            alert("Error = " + contactError.code);
+        }
 
         // onRemoveSuccess: Get a snapshot of the current contacts
         //
