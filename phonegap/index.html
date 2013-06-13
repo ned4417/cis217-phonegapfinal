@@ -11,22 +11,7 @@
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/cordova.2.7.0.js"></script>
     <script src="js/effects.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        // Cordova is ready
-        //
-        function onDeviceReady() {
-            var myContact = navigator.contacts.create({"displayName": "Test User"});
-            myContact.note = "This contact has a note.";
-            alert("The contact, " + myContact.displayName + ", note: " + myContact.note);
-        }
-
-
-    </script>
 
 </head>
 
@@ -58,7 +43,22 @@
         <p><a href="tel:555-555-2555" data-role="button">Call Us</a></p>
         <p><a href="#" onclick="addContact(); return false;" data-role="button">Add ShowBiz To Your Contacts</a></p>
 
+        <script type="text/javascript" charset="utf-8">
 
+            // Wait for Cordova to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // Cordova is ready
+            //
+            function onDeviceReady() {
+                var myContact = navigator.contacts.create({"displayName": "Test User"});
+                myContact.note = "This contact has a note.";
+                alert("The contact, " + myContact.displayName + ", note: " + myContact.note);
+            }
+
+
+        </script>
 
 
     </div>
