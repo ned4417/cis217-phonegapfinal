@@ -33,7 +33,8 @@
         function addContact(){
             // create
             alert("button is working");
-            var contact = navigator.contacts.create();
+            var myContact = navigator.contacts.create({"displayName": "Test User"});
+
             alert("names work1");
              /*contact.displayName = "ShowBiz Pizza Place";
             alert("names work2");
