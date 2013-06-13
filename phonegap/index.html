@@ -13,10 +13,9 @@
     <script type="text/javascript" charset="utf-8" src="cordova.2.7.0.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load.
+       /* // Wait for Cordova to load.
         //
         document.addEventListener("deviceready", onDeviceReady, false);
-
         // Cordova is ready
         //
         function onDeviceReady() {
@@ -33,16 +32,9 @@
         function addContact(){
             // create
             alert("button is working");
-            navigator.notification.vibrate(2500);
-
-            //var contact = navigator.contacts.create();
+            var contact = navigator.contacts.create();
             alert("created variable works");
             contact.displayName = "ShowBiz Pizza Place";
-            contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
-            var name = new ContactName();
-            name.givenName = "ShowBiz";
-            name.familyName = "Pizza";
-            contact.name = name;
 
             var phoneNumbers = [];
             phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
@@ -54,8 +46,19 @@
             contact.save(onSuccess,onError);
 
             // remove
-            //      contact.remove(onRemoveSuccess,onRemoveError);
-        }
+            //contact.remove(onRemoveSuccess,onRemoveError);
+        }*/
+
+       document.addEventListener("deviceready", onDeviceReady, false);
+
+       // Cordova is ready
+       //
+       function onDeviceReady() {
+           var myContact = navigator.contacts.create({"displayName": "Test User"});
+           myContact.note = "This contact has a note.";
+           alert("The contact, " + myContact.displayName + ", note: " + myContact.note);
+       }
+
 
 
     </script>
