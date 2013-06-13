@@ -25,7 +25,7 @@
             alert("The contact, " + myContact.displayName + ", is of the " + myContact.gender + " gender");
 
         }
-        function onSaveSuccess(contact) {
+        /*function onSaveSuccess(contact) {
             alert("Save Success");
         }
 
@@ -37,11 +37,8 @@
         function addContact(){
             // create
             alert("button is working");
-            if (!navigator.contacts) {
-                alert("Contacts API not supported", "Error");
-            }
             var contact = navigator.contacts.create();
-            /*alert("names work1");
+            alert("names work1");
             contact.displayName = "ShowBiz Pizza Place";
             alert("names work2");
             contact.nickname = "ShowBiz Pizza";       //specify both to support all devices
@@ -58,14 +55,14 @@
             var phoneNumbers = [];
             phoneNumbers[0] = new ContactField('mobile', '555-555-1555', false);
             phoneNumbers[1] = new ContactField('work', '555-555-2555', true); // preferred number
-            contact.phoneNumbers = phoneNumbers;*/
+            contact.phoneNumbers = phoneNumbers;
 
             // save
             alert("gets all info")
             contact.save(onSaveSuccess,onSaveError);
 
             // remove
-            //      contact.remove(onRemoveSuccess,onRemoveError);
+            contact.remove(onRemoveSuccess,onRemoveError);
         }
 
         // onSaveSuccess: Get a snapshot of the current contacts
@@ -82,7 +79,7 @@
         //
         function onRemoveError(contactError) {
             alert("Error = " + contactError.code);
-        }
+        }*/
 
     </script>
 
